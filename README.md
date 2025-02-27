@@ -1,3 +1,5 @@
+<div style="background-color: #f8f9fa; color: black; padding: 20px; border-radius: 10px;">
+
 # Cybersecurity Portfolio  
 
 ## About Me  
@@ -54,3 +56,4 @@ Bachelor of Science in Cybersecurity
 [![Nmap](https://img.shields.io/badge/Nmap-Network%20Scanning-lightgrey)](#)  
 [![Snort](https://img.shields.io/badge/Snort-IDS%2FIPS-orange)](#)  
 [![OpenVPN](https://img.shields.io/badge/OpenVPN-Secure%20Access-green)](#)  
+</div>
