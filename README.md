@@ -6,8 +6,7 @@ Hi, I'm Oleg Utkin – a cybersecurity professional with experience in system ad
 ## Education
 
 **Colorado State University**  
-Bachelor of Science in Cybersecurity  
-April 2023 - March 2025
+Bachelor of Science in Cybersecurity
 
 ## Certifications  
 [![CISSP](https://img.shields.io/badge/ISC2-CISSP-blue)](https://www.isc2.org/certifications/cissp) [![CPTS](https://img.shields.io/badge/Hack_The_Box-CPTS-green)](#) [![CDSA](https://img.shields.io/badge/Hack_The_Box-CDSA-green)](#) [![CWEE](https://img.shields.io/badge/Hack_The_Box-CWEE-green)](#)  
