@@ -1,15 +1,14 @@
 # Cybersecurity Portfolio  
 
 ## About Me  
-Hi, I'm [Your Name] – a cybersecurity professional with experience in system administration, penetration testing, and network security. Passionate about ethical hacking, automation, and security operations.  
+Hi, I'm Oleg Utkin – a cybersecurity professional with experience in system administration, penetration testing, and network security. Passionate about ethical hacking, automation, and security operations.  
 
 ## Certifications  
 [![CISSP](https://img.shields.io/badge/ISC2-CISSP-blue)](https://www.isc2.org/certifications/cissp)  
-[![Security+](https://img.shields.io/badge/CompTIA-Security%2B-red)](https://www.comptia.org/certifications/security)  
-[![Network+](https://img.shields.io/badge/CompTIA-Network%2B-blue)](https://www.comptia.org/certifications/network)  
-[![A+](https://img.shields.io/badge/CompTIA-A%2B-gray)](https://www.comptia.org/certifications/a)  
-[![CDSA](https://img.shields.io/badge/CDSA-Certified-green)](#)  
-[![CCD](https://img.shields.io/badge/CCD-Certified-blue)](#)  
+[![CPTS](https://img.shields.io/badge/Hack_The_Box-CPTS-green)](#)  
+[![CDSA](https://img.shields.io/badge/Hack_The_Box-CDSA-green)](#)  
+[![CWEE](https://img.shields.io/badge/Hack_The_Box-CWEE-green)](#)  
+
 
 ## Projects  
 ### [Project 1]  
