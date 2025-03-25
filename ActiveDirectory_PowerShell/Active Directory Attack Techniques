@@ -1,0 +1,100 @@
+Active Directory Attack Techniques
+
+1. Kerberoasting
+- Description: Attackers request service tickets to crack offline for service account passwords.
+- Walkthrough: Identify SPNs → Request tickets → Extract hashes → Crack offline.
+- Prevention: Strong service account passwords, limit SPNs.
+- Detection: Monitor excessive ticket requests (Event ID 4769).
+- Honeypot: Create fake SPNs for detection.
+
+2. AS-REProasting
+- Description: Targets users without Kerberos pre-authentication.
+- Walkthrough: Identify vulnerable users → Request AS-REP tickets → Crack hashes offline.
+- Prevention: Enable Kerberos pre-authentication.
+- Detection: Event ID 4768 with no pre-authentication.
+- Honeypot: Fake accounts with pre-auth disabled.
+
+3. GPP Passwords
+- Description: Attackers exploit Group Policy Preferences storing encrypted passwords.
+- Walkthrough: Find GPP XML files → Extract passwords (AES encryption weak).
+- Prevention: Stop using GPP for passwords.
+- Detection: Scan SYSVOL regularly for vulnerable XML files.
+- Honeypot: Place fake credentials in monitored GPP files.
+
+4. Misconfigured GPO Permissions
+- Description: Exploiting overly permissive GPOs or files deployed via GPO.
+- Walkthrough: Enumerate GPO permissions → Modify or access sensitive files.
+- Prevention: Regular permission audits, principle of least privilege.
+- Detection: Monitor GPO changes and file permissions.
+- Honeypot: Place monitored files with open permissions.
+
+5. Credentials in Network Shares
+- Description: Sensitive credentials stored in unsecured network shares.
+- Walkthrough: Scan shares → Identify exposed credentials.
+- Prevention: Secure shares, proper ACLs.
+- Detection: Regular auditing for credential leaks.
+- Honeypot: Fake shares with monitored credentials.
+
+6. Credentials in User Attributes
+- Description: Credentials stored within AD user object attributes.
+- Walkthrough: LDAP queries → Extract credentials from attributes.
+- Prevention: Avoid storing credentials in attributes.
+- Detection: LDAP monitoring for suspicious queries.
+- Honeypot: Fake credentials in attributes for detection.
+
+7. DCSync
+- Description: Replicating AD password hashes remotely.
+- Walkthrough: Gain Replicating Directory Changes rights → Use DCSync tools (e.g., Mimikatz).
+- Prevention: Restrict replication rights strictly.
+- Detection: Monitor replication events (Event ID 4662).
+- Honeypot: Monitor fake accounts sensitive to replication.
+
+8. Kerberos Golden Ticket
+- Description: Forged ticket granting complete domain access.
+- Walkthrough: Dump KRBTGT hash → Forge Golden Ticket → Domain compromise.
+- Prevention: Rotate KRBTGT regularly, limit Domain Admin access.
+- Detection: Anomalous ticket usage, irregular KRBTGT usage.
+- Honeypot: Monitor abnormal ticket generation activities.
+
+9. Kerberos Constrained Delegation Attack
+- Description: Exploiting delegation rights to compromise other services.
+- Walkthrough: Identify constrained delegation → Abuse for lateral movement.
+- Prevention: Limit delegation, enforce resource-based constraints.
+- Detection: Monitor delegation activity.
+- Honeypot: Fake services with delegation enabled.
+
+10. Print Spooler & NTLM Relaying
+- Description: Exploiting Print Spooler service for NTLM relay attacks.
+- Walkthrough: Trigger print spooler requests → Relay NTLM hashes.
+- Prevention: Disable Print Spooler if unnecessary, SMB signing.
+- Detection: NTLM authentication monitoring.
+- Honeypot: SMB servers to detect relay attempts.
+
+11. Coercing Attacks & Kerberos Unconstrained Delegation
+- Description: Force targets to authenticate to compromised hosts.
+- Walkthrough: Abuse unconstrained delegation → Capture TGTs.
+- Prevention: Avoid unconstrained delegation.
+- Detection: Monitor authentication to suspicious hosts.
+- Honeypot: Fake servers with unconstrained delegation monitored closely.
+
+12. Object ACLs
+- Description: Exploiting improperly set ACLs on AD objects.
+- Walkthrough: Enumerate ACLs → Abuse weak permissions for lateral movement.
+- Prevention: Regular ACL audits, least privilege enforcement.
+- Detection: Monitor ACL changes closely.
+- Honeypot: Objects with weak ACLs under strict monitoring.
+
+13. PKI Misconfigurations – ESC1 (Certificate Enrollment)
+- Description: Exploiting enrollment permissions for privilege escalation.
+- Walkthrough: Enumerate enrollment permissions → Request certificates → Elevate privileges.
+- Prevention: Strict certificate enrollment permissions.
+- Detection: Monitor certificate issuance closely.
+- Honeypot: Fake certificate authorities monitoring issuance attempts.
+
+14. PKI Misconfigurations – ESC8 (Coercion + Certificates)
+- Description: Force authentication and combine with PKI misconfigurations for privilege escalation.
+- Walkthrough: Coerce authentication → Obtain certificate → Escalate privileges.
+- Prevention: Restrict authentication coercion, review PKI enrollment permissions.
+- Detection: Authentication coercion attempts, unusual certificate enrollments.
+- Honeypot: Monitored endpoints vulnerable to coercion attempts.
+
